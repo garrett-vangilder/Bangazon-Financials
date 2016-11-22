@@ -1,5 +1,5 @@
---temp-output:C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\bangazon-financial-reporting-tests\obj\Debug\netcoreapp1.0\
---out:C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\bangazon-financial-reporting-tests\bin\Debug\netcoreapp1.0\bangazon-financial-reporting-tests.dll
+--temp-output:C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\bangazon-financial-reporting-tests\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\bangazon-financial-reporting-tests\bin\Debug\netcoreapp1.0\bangazon-financial-reporting-tests.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -146,6 +146,6 @@
 --reference:C:\Users\Garrett\.nuget\packages\xunit.extensibility.execution\2.2.0-beta2-build3300\lib\netstandard1.0\xunit.execution.dotnet.dll
 --reference:C:\Users\Garrett\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\Garrett\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
---reference:C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\src\bangazon-financial-reporting\bin\Debug\netcoreapp1.0\bangazon-financial-reporting.dll
-C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\bangazon-financial-reporting-tests\Class1.cs
-C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\bangazon-financial-reporting-tests\Properties\AssemblyInfo.cs
+--reference:C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\bin\Debug\netcoreapp1.0\bangazon-financial-reporting.dll
+C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\bangazon-financial-reporting-tests\Class1.cs
+C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\bangazon-financial-reporting-tests\Properties\AssemblyInfo.cs

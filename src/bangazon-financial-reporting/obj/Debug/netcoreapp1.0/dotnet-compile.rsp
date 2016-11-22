@@ -1,5 +1,5 @@
---temp-output:C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\src\bangazon-financial-reporting\obj\Debug\netcoreapp1.0\
---out:C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\src\bangazon-financial-reporting\bin\Debug\netcoreapp1.0\bangazon-financial-reporting.dll
+--temp-output:C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\bin\Debug\netcoreapp1.0\bangazon-financial-reporting.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -127,5 +127,5 @@
 --reference:C:\Users\Garrett\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Garrett\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Garrett\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\src\bangazon-financial-reporting\Program.cs
-C:\Users\Garrett\Source\Workspace\bangazon-financial-reporting\src\bangazon-financial-reporting\Properties\AssemblyInfo.cs
+C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Program.cs
+C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Properties\AssemblyInfo.cs
