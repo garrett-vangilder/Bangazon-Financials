@@ -3,7 +3,7 @@
 	"CustomerId" INTEGER PRIMARY KEY,
 	"FirstName" text NOT NULL,
 	"LastName" text NOT NULL,
-	"StreetNumber" integer NOT NULL,
+	"StreetNumber" text NOT NULL,
 	"StreetName" text NOT NULL,
 	"ZipCode" integer NOT NULL,
 	"State" text NOT NULL
@@ -21,7 +21,9 @@ CREATE TABLE "Order"
 CREATE TABLE "Product"
 (
 	"ProductId" INTEGER PRIMARY KEY,
-	"Price" INTEGER NOT NULL
+	"Name" text NOT NULL,
+	"Price" INTEGER NOT NULL,
+	"Revenue" INTEGER NOT NULL
 );
 
 CREATE TABLE "LineItem"
