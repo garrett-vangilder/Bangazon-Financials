@@ -29,6 +29,10 @@ namespace bangazon_financial_reporting_tests
                 Assert.NotNull(customer.CustomerId);
                 Assert.NotNull(customer.FirstName);
                 Assert.NotNull(customer.LastName);
+                Assert.NotNull(customer.StreetNumber);
+                Assert.NotNull(customer.StreetName);
+                Assert.NotNull(customer.ZipCode);
+                Assert.NotNull(customer.State);
             }
         }
     }

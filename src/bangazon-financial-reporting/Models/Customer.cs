@@ -13,11 +13,6 @@ namespace bangazon_financial_reporting.Models
         public int CustomerId { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime DateCreated { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
 
         [Required]
