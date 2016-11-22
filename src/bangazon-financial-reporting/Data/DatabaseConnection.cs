@@ -16,11 +16,11 @@ namespace bangazon_financial_reporting.Data
      */
     public class DatabaseConnection
     {
-        private string _path = "Data Source=" + System.Environment.GetEnvironmentVariable("REPORTING_DB_PATH");
+        private string connectionString = "Data Source=" + System.Environment.GetEnvironmentVariable("REPORTING_DB_PATH");
 
         public void execute(string query, Action<SqliteDataReader> handler)
         {
-            SqliteConnection dbconn = new SqliteConnection(_path);
+            SqliteConnection dbconn = new SqliteConnection(connectionString);
 
             dbconn.Open();
             SqliteCommand dbcmd = dbconn.CreateCommand();
