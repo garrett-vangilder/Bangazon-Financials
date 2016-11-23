@@ -15,6 +15,6 @@ namespace bangazon_financial_reporting.Models
         public int ProductId { get; set; }
 
         [Required]
-        public int OrderId { get; set; }
+        public int CustomerOderId { get; set; }
     }
 }

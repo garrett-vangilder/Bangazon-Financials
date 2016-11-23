@@ -1,4 +1,6 @@
-﻿using System;
+﻿using bangazon_financial_reporting.Factories;
+using bangazon_financial_reporting.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace bangazon_financial_reporting_tests
         }
 
         [Fact]
-        public void OrderFactoryWillGetMultipleOrdersFromDatabase()
+        public void LineItemFactoryCanGetSeveralLineItemsFromDatabase()
         {
             LineItemFactory factory = new LineItemFactory();
             List<LineItem> lineItems = factory.getAll();
@@ -24,7 +26,7 @@ namespace bangazon_financial_reporting_tests
             Assert.True(lineItems.Count() > 1);
             foreach (LineItem lineItem in lineItems)
             {
-                Assert.NotNull(lineItem.OrderId);
+                Assert.NotNull(lineItem.CustomerOderId);
                 Assert.NotNull(lineItem.ProductId);
             }
         }

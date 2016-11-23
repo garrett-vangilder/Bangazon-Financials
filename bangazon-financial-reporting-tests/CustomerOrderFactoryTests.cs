@@ -26,7 +26,7 @@ namespace bangazon_financial_reporting_tests
             Assert.True(orders.Count() > 1);
             foreach (CustomerOrder order in orders)
             {
-                Assert.NotNull(order.OrderId);
+                Assert.NotNull(order.CustomerOrderId);
                 Assert.NotNull(order.DateCompleted);
             }
         }

@@ -5,44 +5,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using bangazon_financial_reporting.Helpers;
 
 namespace bangazon_financial_reporting.Factories
 {
-    public class CustomerOrderFactory
+    public class LineItemFactory
     {
-        private static CustomerOrderFactory _instance;
-        public static CustomerOrderFactory Instance
+        private static LineItemFactory _instance;
+        public static LineItemFactory Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new CustomerOrderFactory();
+                    _instance = new LineItemFactory();
                 }
                 return _instance;
             }
         }
 
-        public List<CustomerOrder> getAll()
+        public List<LineItem> getAll()
         {
             DatabaseConnection conn = new DatabaseConnection();
-            List<CustomerOrder> list = new List<CustomerOrder>();
+            List<LineItem> list = new List<LineItem>();
 
             conn.execute(@"SELECT 
+                LineItemId,
                 CustomerOrderId,
-                CustomerId,
-                DateCompleted 
-                FROM CustomerOrder",
+                ProductId
+                FROM LineItem",
                 (SqliteDataReader reader) =>
                 {
                     while (reader.Read())
                     {
-                        list.Add(new CustomerOrder
+                        list.Add(new LineItem
                         {
-                            CustomerOrderId = reader.GetInt32(0),
-                            CustomerId =reader.GetInt32(1),
-                            DateCompleted = Utility.ParseDateMethod(reader[2].ToString())
+                            LineItemId = reader.GetInt32(0),
+                            CustomerOderId = reader.GetInt32(1),
+                            ProductId = reader.GetInt32(2)
                         });
                     }
                 });
