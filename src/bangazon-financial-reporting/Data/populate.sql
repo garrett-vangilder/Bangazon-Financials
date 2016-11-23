@@ -38,7 +38,7 @@ INSERT INTO "Product" (Name, Price, Revenue) VALUES
 	('Raspberry Pi', 4500, 1000),
 	('eReader', 25000, 900);
 
-INSERT INTO "Order" (CustomerId, DateCompleted) VALUES
+INSERT INTO "CustomerOrder" (CustomerId, DateCompleted) VALUES
 	(1,'20161005'),
 	(2,'20161005'),
 	(3,'20161005'),
@@ -56,7 +56,7 @@ INSERT INTO "Order" (CustomerId, DateCompleted) VALUES
 	(15,'20141005'),
 	(16,'20161005');
 
-INSERT INTO "LineItem" (ProductId, OrderId) VALUES
+INSERT INTO "LineItem" (ProductId, CustomerOrderId) VALUES
 	(1,1),
 	(2,1),
 	(13,1),

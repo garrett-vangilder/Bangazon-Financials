@@ -10,9 +10,9 @@
 );
 
 
-CREATE TABLE "Order"
+CREATE TABLE "CustomerOrder"
 (
-	"OrderId" INTEGER PRIMARY KEY,
+	"CustomerOrderId" INTEGER PRIMARY KEY,
 	"CustomerId" INTEGER NOT NULL,
 	"DateCompleted" datetime NOT NULL DEFAULT(strftime('%Y-%m-%d %H:%M:%S')),
 	FOREIGN KEY ("CustomerId") REFERENCES "Customer" ("CustomerId")
@@ -30,7 +30,7 @@ CREATE TABLE "LineItem"
 (
 	"LineItemId" INTEGER PRIMARY KEY,
 	"ProductId" INTEGER NOT NULL,
-	"OrderId" INTEGER NOT NULL,
+	"CustomerOrderId" INTEGER NOT NULL,
 	FOREIGN KEY ("ProductId") REFERENCES "Product" ("ProductId"),
-	FOREIGN KEY ("OrderId") REFERENCES "Order" ("OrderId")
+	FOREIGN KEY ("CustomerOrderId") REFERENCES "CustomerOrder" ("CustomerOrderId")
 );
