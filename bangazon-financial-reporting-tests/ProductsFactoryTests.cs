@@ -18,7 +18,7 @@ namespace bangazon_financial_reporting_tests
         }
 
         [Fact]
-        public void ProductFactoryWillGetMultipleCustomersFromDatabase()
+        public void ProductFactoryWillGetMultipleProductsFromDatabase()
         {
             ProductFactory factory = new ProductFactory();
             List<Product> products = factory.getAll();

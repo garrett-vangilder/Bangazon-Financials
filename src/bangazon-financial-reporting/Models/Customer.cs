@@ -30,8 +30,8 @@ namespace bangazon_financial_reporting.Models
         [Required]
         public string State { get; set; }
 
-        // Foreign Key Dependencies
-        //public ICollection<Order> Orders;
+        //Foreign Key Dependencies
+        public ICollection<CustomerOrder> Orders;
 
     }
 }
