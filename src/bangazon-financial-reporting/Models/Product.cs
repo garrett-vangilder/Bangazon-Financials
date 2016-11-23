@@ -21,5 +21,8 @@ namespace bangazon_financial_reporting.Models
         [Required]
         public int Revenue { get; set; }
 
+        public ICollection<LineItem> LineItems;
+
+
     }
 }
