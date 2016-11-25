@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.Sqlite;
+using bangazon_financial_reporting.Menu;
 
 namespace BangazonProductRevenueReports
 {
@@ -18,14 +19,15 @@ namespace BangazonProductRevenueReports
 
             SqliteCommand cs = new SqliteCommand();
             cs.Connection = new SqliteConnection(connectionString);
-            cs.CommandType = CommandType.Text;
+             cs.CommandType = CommandType.Text;
             SqliteDataReader reader;
 
-            //List<string> Names = new List<string>();
-            //List<string> Values = new List<string>()
+            List<string> Names = new List<string>();
+            List<string> Values = new List<string>();
             List<KeyValuePair<string, int>> reportValues = new List<KeyValuePair<string, int>>();
 
-            Console.WriteLine("Bangazon Reports");
+            MainMenu.ReadInput();
+
             bool go_on = true;
 
             while (go_on)
@@ -33,11 +35,7 @@ namespace BangazonProductRevenueReports
                 try
                 {
 
-                    Console.WriteLine("1 - Last Week Report");
-                    Console.WriteLine("2 - Last Month Report");
-                    Console.WriteLine("3 - Last 3 months Report");
-                    Console.WriteLine("4 - Rev by customer");
-                    Console.WriteLine("5 - Rev by product");
+
 
                     var stuff = Console.ReadLine();
 
