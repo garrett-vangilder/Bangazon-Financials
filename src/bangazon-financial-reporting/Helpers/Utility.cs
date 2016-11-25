@@ -30,5 +30,28 @@ namespace bangazon_financial_reporting.Helpers
                 select co).ToList();
             return COLbyDate;
         }
+
+        public static List<LineItem> GetAllLineItems(List<CustomerOrder> COL)
+        {
+            List<LineItem> LIL = new List<LineItem>();
+            LineItemFactory LIF = new LineItemFactory();
+            List<LineItem> AllLineItems = LIF.getAll();
+
+            foreach (CustomerOrder co in COL)
+            {
+                List<LineItem> lineItemsInOrder = (
+                    from li in AllLineItems
+                    where li.CustomerOderId == co.CustomerOrderId
+                    select li
+                    ).ToList();
+
+                if (lineItemsInOrder.Count > 0)
+                {
+                    LIL.AddRange(lineItemsInOrder);
+
+                }
+            }
+            return LIL;
+        }
     }
 }
