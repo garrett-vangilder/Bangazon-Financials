@@ -28,15 +28,15 @@ namespace bangazon_financial_reporting.Menu
                 {
                     case "1":
                         Console.WriteLine("Last Week Report");
-                        Utility.GetAllLineItems(Utility.GetOrdersByDate(7));
+                        Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(7)));
                         break;
                     case "2":
                         Console.WriteLine("Last Month Report");
-                        Utility.GetAllLineItems(Utility.GetOrdersByDate(30));
+                        Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(30)));
                         break;
                     case "3":
                         Console.WriteLine("Last 3 months Report");
-                        Utility.GetAllLineItems(Utility.GetOrdersByDate(90));
+                        Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(90)));
                         break;
                     case "4":
                         Console.WriteLine("Revenue by customer");

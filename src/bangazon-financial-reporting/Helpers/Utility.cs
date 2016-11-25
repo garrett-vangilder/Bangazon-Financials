@@ -3,7 +3,6 @@ using bangazon_financial_reporting.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Helpers
 {
@@ -23,7 +22,6 @@ namespace bangazon_financial_reporting.Helpers
             CustomerOrderFactory COF = new CustomerOrderFactory();
             DateTime DesiredThreshold = DateTime.Today.AddDays(-numberOfDays);
             List<CustomerOrder> COL = COF.getAll();
-            //List<CustomerOrder> COLbyDate = 
             List<CustomerOrder> COLbyDate = (
                 from co in COL
                 where co.DateCompleted > DesiredThreshold
@@ -52,6 +50,44 @@ namespace bangazon_financial_reporting.Helpers
                 }
             }
             return LIL;
+        }
+
+        public static Dictionary<string, int> TurnLineItemsToSalesProducts(List<LineItem> LI)
+        {
+            Dictionary<int, int> d = new Dictionary<int, int>();
+            Dictionary<string, int> e = new Dictionary<string, int>();
+
+            ProductFactory pf = new ProductFactory();
+            List<Product> allProducts = pf.getAll();
+
+            foreach (LineItem li in LI)
+            {
+
+                Product product =
+                    (from p in allProducts
+                     where p.ProductId == li.ProductId
+                     select p).FirstOrDefault();
+
+                if (!d.ContainsKey(li.ProductId))
+                {
+                    d.Add(li.ProductId, 0);
+                    e.Add(product.Name, product.Price);
+                }
+                else
+                {
+                    foreach (KeyValuePair<string, int> pair in e)
+                    {
+                        if (pair.Key == product.Name)
+                        {
+                            e[product.Name] = pair.Value + product.Price;
+                            break;
+                        }
+                    }
+
+
+                }
+            }
+            return e;
         }
     }
 }
