@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bangazon_financial_reporting.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,12 +28,15 @@ namespace bangazon_financial_reporting.Menu
                 {
                     case "1":
                         Console.WriteLine("Last Week Report");
+                        Utility.GetOrdersByDate(7);
                         break;
                     case "2":
                         Console.WriteLine("Last Month Report");
+                        Utility.GetOrdersByDate(30);
                         break;
                     case "3":
                         Console.WriteLine("Last 3 months Report");
+                        Utility.GetOrdersByDate(90);
                         break;
                     case "4":
                         Console.WriteLine("Revenue by customer");
