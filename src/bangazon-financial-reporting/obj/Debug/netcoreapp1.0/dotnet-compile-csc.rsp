@@ -124,6 +124,7 @@
 -r:"C:\Users\Garrett\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Garrett\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
 "C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Program.cs"
+"C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Actions\PrintToMenu.cs"
 "C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Data\DatabaseConnection.cs"
 "C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Factories\CustomerFactory.cs"
 "C:\Users\Garrett\workspace\bangazon\bangazon-financial-reporting\src\bangazon-financial-reporting\Factories\CustomerOrderFactory.cs"
