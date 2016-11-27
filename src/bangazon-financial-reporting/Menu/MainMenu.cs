@@ -1,5 +1,6 @@
 ﻿using bangazon_financial_reporting.Actions;
 using bangazon_financial_reporting.Helpers;
+using bangazon_financial_reporting.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,7 @@ namespace bangazon_financial_reporting.Menu
                         Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Revenue by customer");
                         Console.WriteLine("==========================");
+                        PrintToMenu.PrintRevenueByCustomerReport();
                         Console.WriteLine(); // Empty line.
                         break;
                     case "5":

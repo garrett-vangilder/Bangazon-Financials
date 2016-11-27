@@ -22,6 +22,34 @@ namespace bangazon_financial_reporting.Factories
                 return _instance;
             }
         }
+
+        public Product get(int ProductId)
+        {
+            DatabaseConnection conn = new DatabaseConnection();
+            Product p = null;
+
+            conn.execute(@"select 
+                ProductId,
+                Name, 
+                Price,
+                Revenue
+                FROM Product
+                where ProductId = " + ProductId, (SqliteDataReader reader) => {
+                while (reader.Read())
+                {
+                    p = new Product
+                    {
+                        ProductId = reader.GetInt32(0),
+                        Name = reader[1].ToString(),
+                        Price = reader.GetInt32(2),
+                        Revenue = reader.GetInt32(3)
+                    };
+                }
+            });
+
+            return p;
+        }
+
         public List<Product> getAll()
         {
             DatabaseConnection conn = new DatabaseConnection();

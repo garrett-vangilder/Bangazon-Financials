@@ -29,6 +29,34 @@ namespace bangazon_financial_reporting.Helpers
             return COLbyDate;
         }
 
+        public static List<CustomerOrder> GetOrdersByCustomer(int customerId)
+        {
+            CustomerOrderFactory COF = new CustomerOrderFactory();
+            List<CustomerOrder> COL = COF.getAll();
+            List<CustomerOrder> DesiredCustomerOrders = (
+                from co in COL
+                where co.CustomerId == customerId
+                select co).ToList();
+            return DesiredCustomerOrders;
+        }
+
+        public static Dictionary<string, int> GetsRevenuePerCustomer(int customerId, List<LineItem> LIByCustomer)
+        {
+            int totalRevenue = 0;
+            string nameOfCustomer = GetCustomerNameById(customerId);
+            Dictionary<string, int> d = new Dictionary<string, int>();
+
+            foreach (LineItem li in LIByCustomer)
+            {
+                ProductFactory pf = new ProductFactory();
+                Product chosenProduct = pf.get(li.ProductId);
+                totalRevenue = totalRevenue + chosenProduct.Price;
+            };
+
+            d.Add(nameOfCustomer, totalRevenue);
+            return d;
+        }
+
         public static List<LineItem> GetAllLineItems(List<CustomerOrder> COL)
         {
             List<LineItem> LIL = new List<LineItem>();
@@ -42,11 +70,9 @@ namespace bangazon_financial_reporting.Helpers
                     where li.CustomerOderId == co.CustomerOrderId
                     select li
                     ).ToList();
-
                 if (lineItemsInOrder.Count > 0)
                 {
                     LIL.AddRange(lineItemsInOrder);
-
                 }
             }
             return LIL;
@@ -62,7 +88,6 @@ namespace bangazon_financial_reporting.Helpers
 
             foreach (LineItem li in LI)
             {
-
                 Product product =
                     (from p in allProducts
                      where p.ProductId == li.ProductId
@@ -83,8 +108,6 @@ namespace bangazon_financial_reporting.Helpers
                             break;
                         }
                     }
-
-
                 }
             }
             return e;
@@ -100,7 +123,6 @@ namespace bangazon_financial_reporting.Helpers
 
             foreach (LineItem li in LI)
             {
-
                 Product product =
                     (from p in allProducts
                      where p.ProductId == li.ProductId
@@ -121,11 +143,22 @@ namespace bangazon_financial_reporting.Helpers
                             break;
                         }
                     }
-
-
                 }
             }
             return e;
+        }
+
+        public static string GetCustomerNameById(int customerId)
+        {
+            CustomerFactory cf = new CustomerFactory();
+            List<Customer> allCustomers = cf.getAll();
+
+            Customer customer =
+                (from c in allCustomers
+                 where c.CustomerId == customerId
+                 select c).FirstOrDefault();
+
+            return $"{customer.FirstName} {customer.LastName}";
         }
     }
 }
