@@ -89,5 +89,43 @@ namespace bangazon_financial_reporting.Helpers
             }
             return e;
         }
+
+        public static Dictionary<string, int> TurnLineItemsToRevenueProducts(List<LineItem> LI)
+        {
+            Dictionary<int, int> d = new Dictionary<int, int>();
+            Dictionary<string, int> e = new Dictionary<string, int>();
+
+            ProductFactory pf = new ProductFactory();
+            List<Product> allProducts = pf.getAll();
+
+            foreach (LineItem li in LI)
+            {
+
+                Product product =
+                    (from p in allProducts
+                     where p.ProductId == li.ProductId
+                     select p).FirstOrDefault();
+
+                if (!d.ContainsKey(li.ProductId))
+                {
+                    d.Add(li.ProductId, 0);
+                    e.Add(product.Name, product.Revenue);
+                }
+                else
+                {
+                    foreach (KeyValuePair<string, int> pair in e)
+                    {
+                        if (pair.Key == product.Name)
+                        {
+                            e[product.Name] = pair.Value + product.Revenue;
+                            break;
+                        }
+                    }
+
+
+                }
+            }
+            return e;
+        }
     }
 }

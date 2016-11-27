@@ -32,7 +32,7 @@ namespace bangazon_financial_reporting.Menu
                         Console.WriteLine("Last Week Report");
                         Console.WriteLine("==========================");
                         Dictionary <string, int> LWR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(7)));
-                        PrintToMenu.PrintSalesReport(LWR);
+                        PrintToMenu.PrintReport(LWR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
                     case "2":
@@ -40,7 +40,7 @@ namespace bangazon_financial_reporting.Menu
                         Console.WriteLine("Last Month Report");
                         Console.WriteLine("==========================");
                         Dictionary<string, int> LMR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(30)));
-                        PrintToMenu.PrintSalesReport(LMR);
+                        PrintToMenu.PrintReport(LMR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
                     case "3":
@@ -48,7 +48,7 @@ namespace bangazon_financial_reporting.Menu
                         Console.WriteLine("Last 3 months Report");
                         Console.WriteLine("==========================");
                         Dictionary<string, int> L3MR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(90)));
-                        PrintToMenu.PrintSalesReport(L3MR);
+                        PrintToMenu.PrintReport(L3MR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
                     case "4":
@@ -61,6 +61,8 @@ namespace bangazon_financial_reporting.Menu
                         Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Revenue by product");
                         Console.WriteLine("==========================");
+                        Dictionary<string, int> RP= Utility.TurnLineItemsToRevenueProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(3650)));
+                        PrintToMenu.PrintReport(RP, "Revenue");
                         Console.WriteLine(); // Empty line.
                         break;
                     case "x":

@@ -7,7 +7,7 @@ namespace bangazon_financial_reporting.Actions
 {
     public class PrintToMenu
     {
-        public static void PrintSalesReport(Dictionary<string, int> data)
+        public static void PrintReport(Dictionary<string, int> data, string type)
         {
             if (data.Count == 0)
             {
@@ -17,7 +17,14 @@ namespace bangazon_financial_reporting.Actions
             {
                 foreach (KeyValuePair<string, int> entry in data)
                 {
-                    Console.WriteLine(string.Format("{0} raised ${1}.00 in sales.", entry.Key, entry.Value));
+                    if (type == "Sales")
+                    {
+                        Console.WriteLine(string.Format("{0} raised ${1}.00 in sales.", entry.Key, entry.Value));
+                    }
+                    if (type == "Revenue")
+                    {
+                        Console.WriteLine(string.Format("{0} raised ${1}.00 in revenue.", entry.Key, entry.Value));
+                    }
                 }
             }
 
