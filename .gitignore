@@ -1,0 +1,5 @@
+bangazon.db
+src/bin
+src/obj
+bangazon-financial-reporting-tests/bin
+bangazon-financial-reporting-tests/obj
