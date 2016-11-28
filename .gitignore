@@ -1,5 +1,7 @@
 bangazon.db
-/src/bangazon-financial-reporting/bin/Debug/netcoreapp1.0/src/obj
-/src/bangazon-financial-reporting/bin/Debug/netcoreapp1.0/src/bin
+
+/src/bangazon-financial-reporting/bin
+/src/bangazon-financial-reporting/obj
+
 bangazon-financial-reporting-tests/bin
 bangazon-financial-reporting-tests/obj
