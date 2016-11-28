@@ -40,53 +40,64 @@ namespace bangazon_financial_reporting.Menu
                 switch (input)
                 {
                     case "1":
-                        Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Last Week Report");
-                        Console.WriteLine("==========================");
-                        Dictionary <string, int> LWR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(7)));
+                        Console.WriteLine("=============================================");
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}", "Product", "Value"));
+                        Console.WriteLine("=============================================");
+                        Dictionary<string, int> LWR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(7)));
                         PrintToMenu.PrintReport(LWR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
+
                     case "2":
-                        Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Last Month Report");
-                        Console.WriteLine("==========================");
+                        Console.WriteLine("=============================================");
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}", "Product", "Value"));
+                        Console.WriteLine("=============================================");
                         Dictionary<string, int> LMR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(30)));
                         PrintToMenu.PrintReport(LMR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
+
                     case "3":
-                        Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Last 3 months Report");
-                        Console.WriteLine("==========================");
+                        Console.WriteLine("=============================================");
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}", "Product", "Value"));
+                        Console.WriteLine("=============================================");
                         Dictionary<string, int> L3MR = Utility.TurnLineItemsToSalesProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(90)));
                         PrintToMenu.PrintReport(L3MR, "Sales");
                         Console.WriteLine(); // Empty line.
                         break;
+
                     case "4":
-                        Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Revenue by customer");
-                        Console.WriteLine("==========================");
+                        Console.WriteLine("=============================================");
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}", "Customer", "Revenue"));
+                        Console.WriteLine("=============================================");
                         PrintToMenu.PrintRevenueByCustomerReport();
                         Console.WriteLine(); // Empty line.
                         break;
+
                     case "5":
-                        Console.WriteLine("==========================" + "\n" + "BANGAZON FINANCIAL REPORTS" + "\n" + "========================== ");
                         Console.WriteLine("Revenue by product");
-                        Console.WriteLine("==========================");
-                        Dictionary<string, int> RP= Utility.TurnLineItemsToRevenueProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(3650)));
+                        Console.WriteLine("=============================================");
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}", "Product", "Revenue"));
+                        Console.WriteLine("============================================="); Dictionary<string, int> RP= Utility.TurnLineItemsToRevenueProducts(Utility.GetAllLineItems(Utility.GetOrdersByDate(3650)));
                         PrintToMenu.PrintReport(RP, "Revenue");
                         Console.WriteLine(); // Empty line.
                         break;
+
                     case "x":
                     case "X":
                         Console.WriteLine("Goodbye");
                         return;
+
                     default:
                         Console.WriteLine("This does not match any given option. Press any key to continue.");
                         input = Console.ReadLine();
                         Console.WriteLine(); // Empty line.
                         break;
+
                 }
             }
         }
