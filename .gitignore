@@ -1,5 +1,5 @@
 bangazon.db
-src/bin
-src/obj
+/src/bangazon-financial-reporting/bin/Debug/netcoreapp1.0/src/obj
+/src/bangazon-financial-reporting/bin/Debug/netcoreapp1.0/src/bin
 bangazon-financial-reporting-tests/bin
 bangazon-financial-reporting-tests/obj
