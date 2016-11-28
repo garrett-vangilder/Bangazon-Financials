@@ -6,6 +6,21 @@ using System.Linq;
 
 namespace bangazon_financial_reporting.Helpers
 {
+    /**
+     * Class: Utility
+     * Purpose: Used to organize utility based methods
+     * Notes: 
+     * Methods: 
+     *  DateTime ParseDateMethod(string date) - Parses date from DB to console
+     *  List<CustomerOrder> GetOrdersByDate(int numberOfDays) - Used within option 1,2,3 is used to eliminate unneeded orders pending on given date.
+     *  List<CustomerOrder> GetOrdersByCustomer(int customerId) - Accepts a customerId and returns all orders designated to that customer. Is used in tandem with the GetOrdersByDate method
+     *  Dictionary<string, int> GetsRevenuePerCustomer(int customerId, List<LineItem> LIByCustomer) - Signature accepts a customerId, then uses this id to post it to a the returned dictionary. Loops over lineItems and adds them to a revenue total.
+     *  List<LineItem> GetAllLineItems(List<CustomerOrder> COL) - Gets all lineItems per list of orders.
+     *  Dictionary<string, int> TurnLineItemsToSalesProducts(List<LineItem> LI) - Loops over list of LineItems and collects the information to find the sale total per product.
+     *  string GetCustomerNameById(int customerId) - Querries the DB using LINQ statements to find the customers first and last name.
+     *  
+     * Author: Garrett Vangilder
+     */
     public class Utility
     {
         public static DateTime ParseDateMethod(string date)

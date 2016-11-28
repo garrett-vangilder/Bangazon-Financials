@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Actions
 {
+    /**
+     * Class: PrintToMenu
+     * Purpose: Combines needed methods for display
+     * Author: Garrett Vangilder
+     * Methods:
+     *     
+     *     void PrintReport(Dictionary<string, int> data, string type) - Data is information passed in through utility methods, string type decided the type of string to be presented, theres only two options "Sales" or "Revenue"
+     *     void PrintRevenueByCustomerReport() - Performs several utility methods to create the revenue by customer report
+     */
     public class PrintToMenu
     {
         public static void PrintReport(Dictionary<string, int> data, string type)
@@ -23,11 +32,11 @@ namespace bangazon_financial_reporting.Actions
                 {
                     if (type == "Sales")
                     {
-                        Console.WriteLine(string.Format("{0} raised ${1}.00 in sales.", entry.Key, entry.Value));
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}.00", entry.Key, entry.Value));
                     }
                     if (type == "Revenue")
                     {
-                        Console.WriteLine(string.Format("{0} raised ${1}.00 in revenue.", entry.Key, entry.Value));
+                        Console.WriteLine(string.Format("{0, -25}  {1, 10}.00", entry.Key, entry.Value));
                     }
                 }
             }
@@ -46,7 +55,7 @@ namespace bangazon_financial_reporting.Actions
                 Dictionary<string, int> d = Utility.GetsRevenuePerCustomer(c.CustomerId, li);
                 foreach (KeyValuePair<string, int> entry in d)
                 {
-                    Console.WriteLine(string.Format("{0} raised ${1}.00 in revenue.", entry.Key, entry.Value));
+                    Console.WriteLine(string.Format("{0, -25}  {1, 10}.00", entry.Key, entry.Value));
                 }
             }
 

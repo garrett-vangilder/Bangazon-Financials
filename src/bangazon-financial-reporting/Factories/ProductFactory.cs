@@ -8,6 +8,15 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Factories
 {
+    /**
+     * Class: ProductFactory
+     * Purpose: Connects App with DB allows for SQL querries to grab products
+     * Author: Garrett Vangilder
+     * Methods:
+     *     
+     *     Product get(int ProductId) - uses the productId to grab information from the productId
+     *     List<Product> getAll() - grabs all products from DB using SQL statement 
+     */
     public class ProductFactory
     {
         private static ProductFactory _instance;

@@ -9,6 +9,14 @@ using bangazon_financial_reporting.Helpers;
 
 namespace bangazon_financial_reporting.Factories
 {
+    /**
+     * Class: CustomerOrderFactory
+     * Purpose: Connects App with DB allows for SQL querries to grab orders
+     * Author: Garrett Vangilder
+     * Methods:
+     *     
+     *     List<CustomerOrder> getAll() - grabs all orders from DB using SQL statement 
+     */
     public class CustomerOrderFactory
     {
         private static CustomerOrderFactory _instance;

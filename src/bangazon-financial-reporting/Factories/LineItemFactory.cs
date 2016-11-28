@@ -8,6 +8,14 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Factories
 {
+    /**
+     * Class: LineItemFactory
+     * Purpose: Connects App with DB allows for SQL querries to grab lineitems
+     * Author: Garrett Vangilder
+     * Methods:
+     *     
+     *     List<LineItem> getAll() - grabs all lineitems from DB using SQL statement 
+     */
     public class LineItemFactory
     {
         private static LineItemFactory _instance;

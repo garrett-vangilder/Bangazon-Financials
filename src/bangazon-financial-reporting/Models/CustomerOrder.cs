@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Models
 {
+    /**
+     * Class: CustomerOrder
+     * Purpose: Creates a DB model to store and manipulate DB CustomerOrder entities
+     * Author: Garrett Vangilder
+     */
     public class CustomerOrder
     {
         [Key]

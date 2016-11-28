@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Models
 {
+    /**
+     * Class: Customer
+     * Purpose: Creates a DB model to store and manipulate DB Customer entities
+     * Author: Garrett Vangilder
+     */
     public class Customer
     {
         [Key]

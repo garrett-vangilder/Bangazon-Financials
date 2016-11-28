@@ -8,6 +8,17 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Menu
 {
+    /**
+     * Class: MainMenu
+     * Purpose: Physically prints the MainMenu to the console depending on the switch statement
+     * Notes: Switch statement 1) - Last Week Report
+     * 2.) - Last Month Report
+     * 3.) - Last 3 Month Report
+     * 4.) - Revenue by Customer 
+     * 5.) - Revenue by Product
+     * X.) - Ends program
+     * Author: Garrett Vangilder
+     */
     public class MainMenu
     {
         public static void ReadInput()

@@ -8,6 +8,14 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Factories
 {
+    /**
+     * Class: CustomerFactory
+     * Purpose: Connects App with DB allows for SQL querries to grab customers
+     * Author: Garrett Vangilder
+     * Methods:
+     *     
+     *     List<LineItem> getAll() - grabs all customers from DB using SQL statement 
+     */
     public class CustomerFactory
     {
         private static CustomerFactory _instance;

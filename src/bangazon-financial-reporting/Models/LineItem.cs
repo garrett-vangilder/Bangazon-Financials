@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace bangazon_financial_reporting.Models
 {
+    /**
+     * Class: LineItem
+     * Purpose: Creates a DB model to store and manipulate DB LineItem entities
+     * Author: Garrett Vangilder
+     */
     public class LineItem
     {
         [Key]
